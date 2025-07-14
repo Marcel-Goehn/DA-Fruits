@@ -1,6 +1,6 @@
 <div class="fruitlist_content">
-    @for(singleFruit of fruitlist; track singleFruit.name; let i = $index){
-        <app-singlefruit [fruit]="singleFruit"></app-singlefruit>
+    @for(singleFruit of fruitlistData.fruitlist; track singleFruit.name; let i = $index){
+        <app-singlefruit (fruitName)="fruitlistData.addComment($event, i)" [fruit]="singleFruit"></app-singlefruit>
     } @empty {
     <p>Keine Früchte bisher in der Datenbank!</p>
     }
